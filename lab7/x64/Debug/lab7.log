@@ -1,0 +1,7 @@
+﻿  lab7.cpp
+C:\Users\Марина\Desktop\lab7\lab7.cpp(3,1): warning C4005: _CRT_SECURE_NO_WARNINGS: изменение макроопределения
+  C:\Users\Марина\Desktop\lab7\lab7.cpp(3,1):
+  "_CRT_SECURE_NO_WARNINGS" ранее объявлен в командной строке
+  
+C:\Users\Марина\Desktop\lab7\lab7.cpp(47,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  lab7.vcxproj -> C:\Users\Марина\Desktop\lab7\x64\Debug\lab7.exe
