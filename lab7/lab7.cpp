@@ -35,14 +35,30 @@ void printG(int** G, int size) {
 }
 int* vis = NULL;
 void DFS(int** G, int nG, int s) {
-	vis[s] = 1;
-	printf("%d ", s);
+	int* vis = (int*)malloc(nG * sizeof(int));
 	for (int i = 0; i < nG; i++) {
-		if (G[s][i] == 1 && vis[i] == 0) {
-			DFS(G, nG, i);
+		vis[i] = 0;
+	}
+
+	int* st = (int*)malloc(nG * sizeof(int));  //типо стек
+	int vershina = 0;  // типо вершина стека
+	st[vershina] = s;  //стартовую вершину в стек
+	vis[s] = 1; 
+
+	while (vershina >= 0) {  // Пока стек не пуст
+		int node = st[vershina--];  //следующая вершина
+		printf("%d ", node); 
+
+		//проход по соседним вершинам
+		for (int i = 0; i < nG; i++) {
+			if (G[node][i] == 1 && vis[i] == 0) {  // Если вершины i и node смежные, и i не была посещена
+				vis[i] = 1; 
+				st[++vershina] = i;  //закинули в стек и пошли дальше
+			}
 		}
 	}
 }
+
 void main(void)
 {
 	setlocale(LC_ALL, "");
